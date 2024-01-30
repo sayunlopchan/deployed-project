@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      /* icon size */
+      i {
+        font-size: 40px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 5px;
+        background-color: #1E293B;
+      }
+
+      nav a {
+        color: white;
+        padding: 5px 10px;
+      }
+
+      /* display img */
+      .display img {
+        width: 450px;
+        float: right;
+        border-radius: 30px;
+      }
+
+      input {
+        width: 70%;
+        height: 30px;
+        padding: 0px 10px;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: black;
+        color: white;
+      }
+
+      .display {
+        height: 250px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: #1E293B;
+        padding: 20px;
+      }
+
+      header h1,
+      .txt {
+        color: wheat;
+      }
+
+      /* about */
+      .about {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 90px 20px;
+      }
+
+      .about .bx {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      /* footer card */
+      footer {
+        display: flex;
+        gap: 20px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+
+      footer img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+
+      .card {
+        width: 350px;
+        border-radius: 20px;
+        padding: 10px;
+        color: white;
+        background-color: #1E293B;
+      }
+
+      .card-img {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .card-img img {
+        margin-left: 10px;
+      }
+
+
+      /*size on different screen width */
+      @media (max-width: 760px) {
+        .display img {
+          width: 100%;
+          height: 300px;
+        }
+
+        .display {
+          height: auto;
+          grid-template-columns: 1fr;
+          flex-direction: column;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Skillz</h1>
+      <nav>
+        <a href="">About</a>
+        <a href="">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <!-- display -->
+      <div class="display">
+        <div class="txt">
+          <h1>Learn any digital skill of your choice today</h1>
+          <h4>Over 30000 students currently learn with us</h4>
+          <input type="email" placeholder="Enter your email address">
+          <button>Start learning</button>
+          <p>Try out our free courses.No risk, no credit card required</p>
+        </div>
+        <div class="img">
+          <img
+            src="https://media.istockphoto.com/id/1352606416/photo/young-woman-working-at-home-stock-photo.webp?b=1&s=170667a&w=0&k=20&c=aTxOyR5YvLeE447CR1QhUBoFLUoyaNTRqLiOktmCqaE="
+            alt="lady learning from computer unsplash">
+        </div>
+      </div>
+      <!-- about -->
+      <div class="about">
+
+        <div class="bx bx-1">
+          <i class="fa-solid fa-folder-open"></i>
+          <h3>Over 300 available courses</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sint esse, quaerat iusto id totam ex
+            obcaecati deserunt distinctio rerum voluptatem tempora assumenda ipsa nemo dolore dicta ipsam praesentium
+            nihil.</p>
+        </div>
+
+        <div class="bx bx-2">
+          <i class="fa-solid fa-folder-open"></i>
+          <h3>Over 300 available courses</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sint esse, quaerat iusto id totam ex
+            obcaecati deserunt distinctio rerum voluptatem tempora assumenda ipsa nemo dolore dicta ipsam praesentium
+            nihil.</p>
+        </div>
+
+        <div class="bx bx-3">
+          <i class="fa-solid fa-folder-open"></i>
+          <h3>Over 300 available courses</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sint esse, quaerat iusto id totam ex
+            obcaecati deserunt distinctio rerum voluptatem tempora assumenda ipsa nemo dolore dicta ipsam praesentium
+            nihil.</p>
+        </div>
+
+      </div>
+    </main>
+    <footer>
+      <div class="card card-1">
+        <div class="card-img">
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="">
+          <div class="card-title">
+            <h3>Ryan Florence</h3>
+            <h4>Remix & React Training</h4>
+          </div>
+        </div>
+        <div class="cmt">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
+          </p>
+        </div>
+      </div>
+      <div class="card card-1">
+        <div class="card-img">
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="">
+          <div class="card-title">
+            <h3>Ryan Florence</h3>
+            <h4>Remix & React Training</h4>
+          </div>
+        </div>
+        <div class="cmt">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
+          </p>
+        </div>
+      </div>
+      <div class="card card-1">
+        <div class="card-img">
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="">
+          <div class="card-title">
+            <h3>Ryan Florence</h3>
+            <h4>Remix & React Training</h4>
+          </div>
+        </div>
+        <div class="cmt">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
+          </p>
+        </div>
+      </div>
+      <div class="card card-1">
+        <div class="card-img">
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="">
+          <div class="card-title">
+            <h3>Ryan Florence</h3>
+            <h4>Remix & React Training</h4>
+          </div>
+        </div>
+        <div class="cmt">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
+          </p>
+        </div>
+      </div>
+      <div class="card card-1">
+        <div class="card-img">
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="">
+          <div class="card-title">
+            <h3>Ryan Florence</h3>
+            <h4>Remix & React Training</h4>
+          </div>
+        </div>
+        <div class="cmt">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
+          </p>
+        </div>
+      </div>
+      <div class="card card-1">
+        <div class="card-img">
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="">
+          <div class="card-title">
+            <h3>Ryan Florence</h3>
+            <h4>Remix & React Training</h4>
+          </div>
+        </div>
+        <div class="cmt">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
+          </p>
+        </div>
+      </div>
+      <div class="card card-1">
+        <div class="card-img">
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="">
+          <div class="card-title">
+            <h3>Ryan Florence</h3>
+            <h4>Remix & React Training</h4>
+          </div>
+        </div>
+        <div class="cmt">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
+          </p>
+        </div>
+      </div>
+      <div class="card card-1">
+        <div class="card-img">
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="">
+          <div class="card-title">
+            <h3>Ryan Florence</h3>
+            <h4>Remix & React Training</h4>
+          </div>
+        </div>
+        <div class="cmt">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>
