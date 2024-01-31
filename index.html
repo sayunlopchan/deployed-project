@@ -6,43 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>simple website using grid</title>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         text-decoration: none;
+        font-family: 'Inter', sans-serif;
       }
 
-      /* icon size */
-      i {
-        font-size: 40px;
-      }
+
 
       header {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        padding: 5px;
+        padding: 10px 5px;
         background-color: #1E293B;
       }
 
       nav a {
         color: white;
-        padding: 5px 10px;
+        padding: 10px;
       }
 
-      /* display img */
-      .display img {
+      .main-display {
+        height: 280px;
+        display: grid;
+        grid-template-columns: 1.9fr 1fr;
+        background-color: #1E293B;
+        padding: 20px 20px;
+        align-items: center;
+        justify-items: center;
+
+      }
+
+      /*  display img */
+      .main-display img {
         width: 450px;
-        float: right;
-        border-radius: 30px;
-        box-shadow: 2px 2px 2px #1E293B;
+        border-radius: 15px;
+      }
+
+      .main-display .dis-txt {
+        line-height: 1.9rem;
+      }
+
+      header h1,
+      .dis-txt {
+        color: wheat;
       }
 
       input {
-        width: 70%;
-        height: 30px;
-        padding: 0px 10px;
+        width: 50%;
+        outline: none;
+        padding: 5px;
         border-radius: 5px;
         margin: 5px 0px;
       }
@@ -54,72 +72,82 @@
       }
 
       button:hover {
-        background-color: black;
-        color: white;
+        background-color: wheat;
+        color: #1E293B;
       }
 
-      .display {
-        height: 250px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        background-color: #1E293B;
-        padding: 20px;
-      }
 
-      header h1,
-      .txt {
-        color: wheat;
-      }
 
-      /* about */
-      .about {
+      /* Courses */
+      .courses {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        margin: 90px 20px;
+        margin: 80px auto;
       }
 
-      .about .bx {
-        margin: 10px;
+      .courses .bx {
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         gap: 5px;
+        margin: 2px;
+        padding: 20px;
+        background-color: whitesmoke;
+      }
+
+      /* icon size */
+      i {
+        font-size: 30px;
+      }
+
+      /* feedback */
+      .feedback-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
       }
 
       /* wrapper card */
       .wrapper {
-        display: flex;
-        gap: 20px;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: flex-start;
+        gap: 30px;
+        background-color: whitesmoke;
+        border-radius: 10px;
       }
 
       .wrapper img {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
+        margin: 5px;
       }
 
       .card {
-        width: 300px;
+        max-width: 300px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        padding: 10px;
-        color: white;
-        background-color: #1E293B;
+        gap: 5px;
+        padding: 5px;
+        background-color: white;
         border-radius: 20px;
+        border: 1px solid #1E293B;
       }
 
-      .card-img {
+      .card-info {
         display: flex;
         gap: 30px;
         align-items: center;
       }
 
       .card .cmt {
-        margin: auto 10px;
+        text-align: center;
+        padding: 0px 5px;
       }
 
       footer {
@@ -135,22 +163,37 @@
 
       /*size on different screen width */
       @media (max-width: 800px) {
-        .display img {
+        .main-display img {
           width: 100%;
-          height: 200px;
-          margin: 15px auto;
-          float: none;
         }
 
-        .display {
+        .main-display .dis-txt {
+          margin-bottom: 5%;
+        }
+
+        .main-display {
           height: auto;
           grid-template-columns: 1fr;
+          grid-template-rows: 2fr;
           justify-items: center;
         }
 
         input {
           width: 60%;
           margin: 5px;
+        }
+
+        .courses {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+        }
+
+        .wrapper {
+          width: 100%;
+          gap: 10px;
+          align-items: flex-end;
+          justify-items: center;
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -161,37 +204,38 @@
 
   <body>
     <header>
-      <h1>Skillz</h1>
+      <div class="logo">
+        <h1>Skillz</h1>
+      </div>
       <nav>
         <a href="">About</a>
         <a href="">Contact</a>
       </nav>
     </header>
     <main>
-      <!-- display -->
-      <div class="display">
-        <div class="txt">
+      <!-- main-display -->
+      <div class="main-display">
+        <div class="dis-txt">
           <h1>Learn any digital skill of your choice today</h1>
           <h4>Over 30000 students currently learn with us</h4>
           <input type="email" placeholder="Enter your email address">
-          <button>Start learning</button>
+          <button type="submit">Start learning</button>
           <p>Try out our free courses.No risk, no credit card required</p>
         </div>
-        <div class="img">
+        <div class="dis-img">
           <img
             src="https://media.istockphoto.com/id/1352606416/photo/young-woman-working-at-home-stock-photo.webp?b=1&s=170667a&w=0&k=20&c=aTxOyR5YvLeE447CR1QhUBoFLUoyaNTRqLiOktmCqaE="
             alt="lady learning from computer unsplash">
         </div>
       </div>
-      <!-- about -->
-      <div class="about">
+      <!-- cources -->
+      <div class="courses">
 
         <div class="bx bx-1">
           <i class="fa-solid fa-folder-open"></i>
           <h3>Over 300 available courses</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sint esse, quaerat iusto id totam ex
-            obcaecati deserunt distinctio rerum voluptatem tempora assumenda ipsa nemo dolore dicta ipsam praesentium
-            nihil.</p>
+            obcaecati deserunt distinctio rerum .</p>
         </div>
 
         <div class="bx bx-2">
@@ -212,126 +256,145 @@
 
       </div>
     </main>
-    <div class="wrapper">
-      <div class="card card-1">
-        <div class="card-img">
-          <img
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
-            alt="">
-          <div class="card-title">
-            <h3>Ryan Florence</h3>
-            <p>Remix & React Training</p>
+    <div class="feedback-title">
+
+      <h2>Our customers Feedbacks</h2>
+      <div class="wrapper">
+        <div class="card">
+          <div class="card-info">
+            <img
+              src="https://images.unsplash.com/photo-1631624222568-6619ce21a683?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNvZGVyJTIwcGVyc29ufGVufDB8fDB8fHww"
+              alt="">
+            <div class="card-title">
+              <h3>CodeNinja42</h3>
+              <p>Full Stack Developer</p>
+            </div>
+          </div>
+          <hr>
+          <div class="cmt">
+            </p>Tailwind CSS has been a game-changer for me.
+            <p>
           </div>
         </div>
-        <div class="cmt">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
-          </p>
-        </div>
-      </div>
-      <div class="card card-1">
-        <div class="card-img">
-          <img
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
-            alt="">
-          <div class="card-title">
-            <h3>Ryan Florence</h3>
-            <p>Remix & React Training</p>
+        <div class="card">
+          <div class="card-info">
+            <img
+              src="https://media.istockphoto.com/id/1330084984/photo/portrait-of-indian-male-teacher-outside-of-library.webp?b=1&s=170667a&w=0&k=20&c=y-94QorlnImNfTA8-oBIRBQscy3ER4L4mC6lQCGHc8k="
+              alt="">
+            <div class="card-title">
+              <h3> DataGeek88</h3>
+              <p>Data Analyst</p>
+            </div>
+          </div>
+          <hr>
+          <div class="cmt">
+            <p>Tailwind CSS has its merits, especially for rapid prototyping and simple projects.
+            </p>
           </div>
         </div>
-        <div class="cmt">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
-          </p>
-        </div>
-      </div>
-      <div class="card card-1">
-        <div class="card-img">
-          <img
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
-            alt="">
-          <div class="card-title">
-            <h3>Ryan Florence</h3>
-            <p>Remix & React Training</p>
+        <div class="card">
+          <div class="card-info">
+            <img
+              src="https://media.istockphoto.com/id/459135111/photo/senior-business-man-silhouette.webp?b=1&s=170667a&w=0&k=20&c=5rwcODWD7h9QwSTi7ebjZyXZ_PWKIb2h2xfaDT9wnKk="
+              alt="">
+            <div class="card-title">
+              <h3>DevOpsMaestro</h3>
+              <p>DevOps Engineer</p>
+            </div>
+          </div>
+          <hr>
+          <div class="cmt">
+            <p>Tailwind CSS is not my primary concern in the DevOps world. However, I appreciate its simplicity when
+              working on internal tools or dashboard interfaces.
+            </p>
           </div>
         </div>
-        <div class="cmt">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
-          </p>
-        </div>
-      </div>
-      <div class="card card-1">
-        <div class="card-img">
-          <img
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
-            alt="">
-          <div class="card-title">
-            <h3>Ryan Florence</h3>
-            <p>Remix & React Training</p>
+        <div class="card">
+          <div class="card-info">
+            <img
+              src="https://media.istockphoto.com/id/1405522719/photo/man-sitting-indoor-looks-at-camera-participate-in-live-videoconference.webp?b=1&s=170667a&w=0&k=20&c=Dt8386bRyLdIZs_m586jKfbR3RaZ2M6evqqOnADCz-k="
+              alt="">
+            <div class="card-title">
+              <h3> DevNovice21</h3>
+              <p>Junior Developer</p>
+            </div>
+          </div>
+          <hr>
+          <div class="cmt">
+            <p>
+              Tailwind CSS is a breeze for beginners like me.
+            </p>
           </div>
         </div>
-        <div class="cmt">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
-          </p>
-        </div>
-      </div>
-      <div class="card card-1">
-        <div class="card-img">
-          <img
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
-            alt="">
-          <div class="card-title">
-            <h3>Ryan Florence</h3>
-            <p>Remix & React Training</p>
+        <div class="card">
+          <div class="card-info">
+            <img
+              src="https://media.istockphoto.com/id/1300972574/photo/millennial-male-team-leader-organize-virtual-workshop-with-employees-online.webp?b=1&s=170667a&w=0&k=20&c=96pCQon1xF3_onEkkckNg4cC9SCbshMvx0CfKl2ZiYs="
+              alt="">
+            <div class="card-title">
+              <h3>StylishCoderX</h3>
+              <p>Remix & React Training</p>
+            </div>
+          </div>
+          <hr>
+          <div class="cmt">
+            <p> "Tailwind CSS is a breeze for beginners like me. The ready-to-use utility classes simplify styling,
+              making
+              it easy to create clean and responsive designs
+            </p>
           </div>
         </div>
-        <div class="cmt">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
-          </p>
-        </div>
-      </div>
-      <div class="card card-1">
-        <div class="card-img">
-          <img
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
-            alt="">
-          <div class="card-title">
-            <h3>Ryan Florence</h3>
-            <p>Remix & React Training</p>
+        <div class="card">
+          <div class="card-info">
+            <img
+              src="https://media.istockphoto.com/id/637933814/photo/portrait-of-businessman-smiling-in-business-office.webp?b=1&s=170667a&w=0&k=20&c=OaXRoEx24bVVvwNlolTuimvZWVG-TOwSKK9z0jlRLwU="
+              alt="">
+            <div class="card-title">
+              <h3>MinimalistDev</h3>
+              <p>Web Developer</p>
+            </div>
+          </div>
+          <hr>
+          <div class="cmt">
+            <p>
+              Tailwind CSS simplifies styling with its utility classes, making my codebase cleaner.
+            </p>
           </div>
         </div>
-        <div class="cmt">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
-          </p>
-        </div>
-      </div>
-      <div class="card card-1">
-        <div class="card-img">
-          <img
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
-            alt="">
-          <div class="card-title">
-            <h3>Ryan Florence</h3>
-            <p>Remix & React Training</p>
+        <div class="card">
+          <div class="card-info">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="">
+            <div class="card-title">
+              <h3>CodeWithharry</h3>
+              <p>Developer/content creator</p>
+            </div>
+          </div>
+          <hr>
+          <div class="cmt">
+            <p>Tailwind CSS simplifies styling with its utility classes, making my codebase cleaner. It's lightweight
+              and
+              perfect for smaller projects where simplicity and speed are key
+            </p>
           </div>
         </div>
-        <div class="cmt">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
-          </p>
-        </div>
-      </div>
-      <div class="card card-1">
-        <div class="card-img">
-          <img
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZlbWFsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D"
-            alt="">
-          <div class="card-title">
-            <h3>Ryan Florence</h3>
-            <p>Remix & React Training</p>
+        <div class="card">
+          <div class="card-info">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="">
+            <div class="card-title">
+              <h3>coderboi</h3>
+              <p>Font dev</p>
+            </div>
           </div>
-        </div>
-        <div class="cmt">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
-          </p>
+          <hr>
+          <div class="cmt">
+            <p> it easy to create clean and responsive designs. It's a handy tool that speeds up my learning curve in
+              frontend development
+            </p>
+          </div>
         </div>
       </div>
     </div>
