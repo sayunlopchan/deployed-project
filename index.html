@@ -155,16 +155,19 @@
         margin: 5px;
       }
 
+      .card:hover {
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      }
+
       footer {
         margin: 20px 0px;
         height: 300px;
         background-color: #1E293B;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 5px;
         color: wheat;
+        position: relative;
       }
 
       footer .footer-flex {
@@ -175,7 +178,11 @@
 
       .footer-flex a {
         color: wheat;
+      }
 
+      .footer-p-text {
+        top: 55%;
+        position: absolute;
       }
 
       .footer-flex i:hover {
@@ -454,7 +461,9 @@
         <a href="https://www.linkedin.com/in/sayun-lopchan-b57009281/" target="_blank"><i
             class="fa-brands fa-linkedin"></i></a>
       </div>
-      <p class="footer-p-text">sayun lopchan</p>
+      <div class="footer-p-text">
+        <p>sayun lopchan</p>
+      </div>
     </footer>
   </body>
 
